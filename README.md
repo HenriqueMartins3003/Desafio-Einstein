@@ -10,9 +10,9 @@ API REST que integra com o The Movie Database (TMDB) (https://www.themoviedb.org
 | --------------- | -------------------- | ----------------------------------------------------------------------------------------- |
 | Runtime         | Node.js + TypeScript | Requisito do desafio; tipagem estática reduz bugs em contratos de API                     |
 | Framework       | Fastify v5           | Schema-first, serialização mais rápida que Express, suporte nativo a plugins e Swagger    |
-| ORM             | Prisma               | Type-safety completo, migrations versionadas, excelente DX                                |
+| ORM             | Prisma               | Type-safety completo, migrations versionadas, Desenvolvimento mais fluido (otimo DX)      |
 | Banco           | PostgreSQL 16        | Relacional robusto; `tmdbId` único garante integridade sem lógica extra                   |
-| Cache           | Redis 7 + ioredis    | TTL configurável por chave; persistência além do processo                                 |
+| Cache           | Redis 7 + ioredis    | Time To Live(TTL) configurável por chave; persistência além do processo                   |
 | HTTP client     | undici               | Nativo do Node.js, zero dependências externas, suporte a `AbortController` para timeout   |
 | Validação       | Zod                  | Valida env vars e request bodies com mensagens de erro descritivas                        |
 | Testes          | Vitest               | API idêntica ao Jest, extremamente rápido com suporte nativo a ESM/TypeScript             |
