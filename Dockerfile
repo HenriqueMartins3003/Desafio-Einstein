@@ -3,14 +3,14 @@ WORKDIR /app
 
 RUN apk add --no-cache openssl
 
-COPY package*.json ./
+COPY package.json yarn.lock ./
 COPY prisma ./prisma
-RUN npm install
+RUN yarn install --frozen-lockfile
 
 COPY . .
-RUN npm run build
-RUN npx prisma generate
+RUN yarn build
+RUN yarn prisma:generate
 
 EXPOSE 3000
 
-CMD ["sh", "-c", "npx prisma migrate deploy && node dist/server.js"]
+CMD ["sh", "-c", "yarn prisma:deploy && node dist/server.js"]
